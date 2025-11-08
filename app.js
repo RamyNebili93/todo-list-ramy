@@ -20,16 +20,19 @@ function addTask() {
     }
     todoInput.value = "";
     saveData();
+    updateCounter();
 }
 
 listContainer.addEventListener("click", function(e) {
     if(e.target.tagName === "LI") {
         e.target.classList.toggle("checked");
         saveData();
+        updateCounter();
     }
     else if(e.target.tagName === "SPAN") {
         e.target.parentElement.remove();
         saveData();
+        updateCounter();
     }
 }, false);
 
@@ -42,3 +45,11 @@ function saveData() {
     listContainer.innerHTML = localStorage.getItem("data");
 }
 showTask();
+
+function updateCounter() {
+    const totalTasks = document.querySelectorAll("#list-container li").length;
+    const doneTasks = document.querySelectorAll("#list-container li.checked").length;
+    const counter = document.getElementById("counter");
+    counter.textContent = doneTasks + "/" + totalTasks + " tâches terminées";
+}
+updateCounter();
