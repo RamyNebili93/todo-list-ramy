@@ -186,4 +186,89 @@ ul li span:hover {
     color: #ff5945;
     background: #fff;
     text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 2px;
+    transition: all 0.2s ease;
+}
+
+@media (max-width: 600px) {
+    .container{
+        padding: 10px;
+    }
+
+    .todo-app {
+        width: 100%;
+        margin: 30px auto;
+        padding: 30px 20px 50px;
+    }
+
+    .todo-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    #counter {
+        margin: 10px 15px 0;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 8px 12px;
+    }
+
+    .row input {
+        flex: none !important;
+        width: 100% !important;
+        height: 34px !important;
+        padding: 6px 10px !important;
+        font-size: 13px !important;
+        border-radius: 18px !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+    }
+
+    .row input:focus::placeholder {
+        color: transparent;
+        transform: none;
+    }
+
+    .row button {
+        height: 34px !important;
+        padding: 6px 12px !important;
+        font-size: 14px !important;
+        border-radius: 18px !important;
+    }
+
+    .row button:hover {
+        transform: none;
+    }
+
+    .filters {
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 0;
+    }
+
+    .filters button {
+        flex: auto;
+        text-align: center;
+        padding: 8px 0;
+        font-size: 12px;
+    }
+
+    ul li {
+        font-size: 15px;
+        padding-left: 45px;
+    }
+
+    ul li::before {
+        width: 24px;
+        height: 24px;
+        top: 10px;
+        left: 5px;
+    }
 }
