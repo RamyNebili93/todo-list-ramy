@@ -53,3 +53,29 @@ function updateCounter() {
     counter.textContent = doneTasks + "/" + totalTasks + " tâches terminées";
 }
 updateCounter();
+
+function filterTasks(type, btn) {
+    const tasks = document.querySelectorAll("#list-container li");
+    tasks.forEach(task => {
+        const isDone = task.classList.contains("checked");
+
+        if (type === "all") {
+            task.style.display = "block";
+        } else if (type === "done" && isDone) {
+            task.style.display = "block";
+        } else if (type === "todo" && !isDone) {
+            task.style.display = "block";
+        } else {
+            task.style.display = "none";
+        }
+    });
+
+    const filterButtons = document.querySelectorAll(".filters button");
+    filterButtons.forEach(button => button.classList.remove("active"));
+    if (btn) {
+        btn.classList.add("active");
+    }
+}
+
+    const firstFilterBtn = document.querySelector(".filters button");
+    filterTasks("all", firstFilterBtn);
