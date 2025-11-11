@@ -26,7 +26,6 @@
     color: #002765;
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
     padding-left: 10px;
     font-size: 30PX;
 }
@@ -74,6 +73,8 @@ input {
 
 input::placeholder {
     color: #a2a3a5;
+    font-style: light;
+    font-weight: 300;
     transition: all 0.3s ease;   
 }
 input:focus::placeholder {
@@ -90,6 +91,11 @@ button {
     color: #fff;
     font-size: 16px;
     cursor: pointer;
+}
+
+button img {
+    width: 30px;
+    height: 30px;
 }
 
 button:hover {
@@ -250,15 +256,22 @@ ul li span:hover {
         justify-content: center;
         background: #ff5945;
         color: transparent;
-        margin: 5px 0 0 -70px;
+        margin: 5px -13px 0 -70px;
+    }
+
+    .row button img {
+        display: none;
     }
 
     .row button::before {
-        content: "";
+        content: '';
         display: block;
-        width: 30px;
-        height: 30px;
-        background: url("./images/input.svg") no-repeat center;
+        width: 24px;
+        height: 24px;
+        margin: 0 auto;
+        background-image: url('./images/input.svg');
+        background-repeat: no-repeat;
+        background-position: center;
         background-size: contain;
     }
 
